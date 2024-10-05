@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery CSS Manipulation</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- TODO: Add in the jQuery script  -->>
+    <!-- TODO: Add in the jQuery script  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -33,6 +34,16 @@
         <button class="btn">Italicize Text</button>
     </div>
 
+    <div class="box" id="box5">
+        <p class="text-element">Text 5</p>
+        <button class="btn">Change background of page</button>
+    </div>
+
+    <div class="box" id="box6">
+        <p class="text-element">Text 6</p>
+        <button class="btn">Change my text</button>
+    </div>
+
     <script>
         $(document).ready(function () {
             // Change text color to red for the first box
@@ -41,11 +52,31 @@
             });
 
             // TODO: Increase font size for the second box
-
+            $('#box2 button').click(function (){
+                $('#box2').css('font-size', '2em');
+            })
             // TODO: Change background color for the third box
+            $('#box3 button').hover(function () {
+                $('#box3').css({
+                'background-color': 'blue',
+                color: 'white',
+                borderRadius: '10px'
+                })
+            })
 
             // TODO: Italicize text for all the text elements
+            $('#box4').hover(function () {
+                $('.box').css('font-style', 'italic')
+            })
 
+
+            $('#box5 button').click(function () {
+                $('body').css('background-color', 'aqua')
+            })
+
+            $('#box6 button').click(function () {
+                $('#box6 .text-element').text('I have been changed')
+            })
         });
     </script>
 
