@@ -36,12 +36,34 @@
         .autocomplete {
             margin-bottom: 20px;
         }
+
+        .boxes {
+            height: 20px;
+            width: 100px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
 
     <h2>jQuery UI Widgets Demo</h2>
+
+
+
+    <div class="sortablelist">
+        <div class="boxes" id="box1" >
+            <p>Box 1</p>
+        </div>
+        <div class="boxes" id="box2" >
+            <p>Box 2</p>
+        </div>
+        <div class="boxes" id="box3" >
+            <p>Box 3</p>
+        </div>
+    </div>
 
     <!-- Drag and Drop Box -->
     <div class="draggable-box">
@@ -58,6 +80,10 @@
         $(document).ready(function () {
             // Draggable widget
             $(".draggable-box").draggable();
+
+            $(".sortablelist").sortable();
+
+            $(".draggable-box").resizable();
 
             // Datepicker widget
             $("#datepicker").datepicker();
